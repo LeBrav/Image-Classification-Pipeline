@@ -9,7 +9,7 @@
 
 ## Introduction
 This project is designed to perform image classification using different Convolutional Neural Network (CNN) models in Keras. It supports three functionalities:
-1. Inference
+1. Inference with Class Activation Maps
 
 <img src="readme_images/inference.png" width="300" height="auto" alt="inference">
 
