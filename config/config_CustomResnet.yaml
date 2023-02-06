@@ -1,0 +1,47 @@
+dataset:
+  train_path: ../../MIT_small_train_1/train
+  val_path: ../../MIT_small_train_1/test
+  input_shape: 256
+  batch_size: 16
+  augment: True
+  preprocessing_function: tf.keras.applications.resnet50.preprocess_input #preprocess_input
+
+inference_model:
+#  model_path: aaa
+  weights_path: models/customresnet_bestmikiresults_onlyweights.h5
+  output_layer: "global_average_pooling2d"
+  classes: ['coast', 'forest', 'highway', 'inside_city', 'mountain', 'Opencountry', 'street', 'tallbuilding']
+
+teacher_model:
+  model_path: ../w4/models/base_model.h5 #../w4/models/optimized_modelconv4_block6_out.h5
+  weights_path: ../w4/weights/base_model.h5 #optimized_modelconv4_block6_out.h5
+  save_model_path_student: models/student.h5
+  temperature: 0.9
+  alpha: 0.3
+
+model: #also will be the student in case you do distilation
+  name: resnet
+  n_blocks: 2
+  channels: 8
+  dropout: 0.3
+
+optimizer:
+  name: Adam
+  settings:
+    learning_rate: 0.01
+    decay: 0.001
+  warmup_steps: 40
+  cosine_decay: 0.5
+
+loss: categorical_crossentropy
+
+n_epochs: 150
+
+#early_stopping:
+#  monitor: val_accuracy
+#  patience: 10
+#  min_delta: 0.01
+#  mode: max
+#  restore_best_weights: True
+
+model_path: models/customresnet_bestmikiresults.h5
