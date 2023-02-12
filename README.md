@@ -6,7 +6,7 @@
 - [Main Function](#main-function)
 - [Config Files](#config-files)
 - [Sweep Config Files](#sweep-config-file)
-- [Authors]()
+- [Authors](#authors)
 
 ## Introduction
 This project is designed to perform image classification using different Convolutional Neural Network (CNN) models in Keras. It supports three functionalities:
