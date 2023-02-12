@@ -6,6 +6,7 @@
 - [Main Function](#main-function)
 - [Config Files](#config-files)
 - [Sweep Config Files](#sweep-config-file)
+- [Authors]()
 
 ## Introduction
 This project is designed to perform image classification using different Convolutional Neural Network (CNN) models in Keras. It supports three functionalities:
@@ -99,3 +100,8 @@ And in the config file will be overwritten with the chosen one:
 dataset:
   preprocessing_function: tf.keras.applications.resnet50.preprocess_input
 ```
+
+## Authors
+Josep Bravo (Me) and Miquel Romero (https://github.com/0Miquel)
+
+
